@@ -38,7 +38,7 @@ function init() {
         type: "list",
         message: "Choose a license",
         name: "License",
-        choices: ["MIT", "Apache 2.0", "GNU GPL"],
+        choices: ["MIT", "Apache 2.0", "GNU GPL", "Other/None"],
       },
       {
         type: "input",

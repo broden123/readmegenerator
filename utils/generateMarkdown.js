@@ -10,6 +10,9 @@ function renderLicenseBadge(license) {
     case "GNU GPL":
       return "[<img src=https://img.shields.io/badge/License-GNU%20GPL-blue>]";
       break;
+    case "Other/None":
+      return "";
+      break;
     default:
       return;
   }
@@ -27,6 +30,9 @@ function renderLicenseLink(license) {
     case "GNU GPL":
       return "(https://www.gnu.org/licenses/gpl-3.0.en.html)";
       break;
+    case "Other/None":
+      return "";
+      break;
     default:
       return;
   }
@@ -39,9 +45,41 @@ function renderLicenseSection(license) {
   } else return;
 }
 
-// TODO: Create a function to generate markdown for README
+//generate markdown
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `# ${data.Title}
+  ${renderLicenseBadge(data.License)}${renderLicenseLink(data.License)}
+
+  ## Table of Content 
+
+- [Description](#description)
+- [Installation](#installation)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+
+## Description 
+${data.Description}
+
+## Installation 
+${data.Installation}
+
+## Usage 
+${data.Usage}
+
+## License 
+${renderLicenseSection(data.License)}
+
+## Contributing 
+${data.Contribution}
+
+## Tests 
+${data.Test}
+
+## Questions 
+Email: ${data.Email}
+Github Profile: [Github](https://github.com/${data.Github})
 
 `;
 }
