@@ -7,8 +7,8 @@ function renderLicenseBadge(license) {
     case "Apache 2.0":
       return '[<img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg">]';
       break;
-    case "GPL":
-      return "https://img.shields.io/badge/License-GNU%20GPL-blue";
+    case "GNU GPL":
+      return "[<img src=https://img.shields.io/badge/License-GNU%20GPL-blue>]";
       break;
     default:
       return;
@@ -32,8 +32,7 @@ function renderLicenseLink(license) {
   }
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+//render license section if chosen
 function renderLicenseSection(license) {
   if (license) {
     return `${license}`;
